@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIMO Settings</title>
+  <link href="assets/vendors/keenicons/styles.bundle.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-background" data-page="settings">
+  <div class="min-h-screen">
+    <header class="border-b bg-white">
+      <div class="container-fixed py-4 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-xl font-semibold">Move In / Move Out</div>
+        <nav class="flex flex-wrap gap-2 text-sm">
+          <a data-nav="dashboard" href="index.html" class="px-3 py-2 rounded border">Dashboard</a>
+          <a data-nav="sessions" href="sessions.html" class="px-3 py-2 rounded border">Sessions</a>
+          <a data-nav="capture" href="capture.html" class="px-3 py-2 rounded border">Capture</a>
+          <a data-nav="compare" href="compare.html" class="px-3 py-2 rounded border">Compare</a>
+          <a data-nav="report" href="report.html" class="px-3 py-2 rounded border">Report</a>
+          <a data-nav="settings" href="settings.html" class="px-3 py-2 rounded border">Settings</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-fixed py-8">
+      <div class="grid lg:grid-cols-3 gap-5">
+        <section class="border rounded-xl p-5 bg-white lg:col-span-2">
+          <h1 class="text-lg font-semibold mb-4">Preferences</h1>
+          <form id="settingsForm" class="space-y-3">
+            <div>
+              <label class="block text-sm mb-1">Inspector name</label>
+              <input id="inspectorName" class="kt-input w-full" placeholder="Jane Doe">
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Company</label>
+              <input id="companyName" class="kt-input w-full" placeholder="MIMO Inspections LLC">
+            </div>
+            <label class="kt-checkbox">
+              <input id="autoSaveCompare" type="checkbox">
+              <span>Auto-save compare selections for report workflow</span>
+            </label>
+            <button class="kt-btn kt-btn-primary" type="submit">Save Preferences</button>
+          </form>
+        </section>
+
+        <section class="border rounded-xl p-5 bg-white">
+          <h2 class="text-lg font-semibold mb-3">Local Data</h2>
+          <p class="text-sm text-muted-foreground mb-3">Clears sessions, active session selection, compare/report selection, and preferences from this browser only.</p>
+          <button id="clearDataBtn" class="kt-btn kt-btn-danger w-full" type="button">Clear Local Data</button>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/core.bundle.js"></script>
+  <script src="assets/vendors/ktui/ktui.min.js"></script>
+  <script src="assets/js/layouts/demo1.js"></script>
+  <script src="assets/js/mimo.js"></script>
+  <script src="assets/js/mimo-pages.js"></script>
+</body>
+</html>

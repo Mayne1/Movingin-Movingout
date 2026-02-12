@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIMO Sessions</title>
+  <link href="assets/vendors/keenicons/styles.bundle.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-background" data-page="sessions">
+  <div class="min-h-screen">
+    <header class="border-b bg-white">
+      <div class="container-fixed py-4 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-xl font-semibold">Move In / Move Out</div>
+        <nav class="flex flex-wrap gap-2 text-sm">
+          <a data-nav="dashboard" href="index.html" class="px-3 py-2 rounded border">Dashboard</a>
+          <a data-nav="sessions" href="sessions.html" class="px-3 py-2 rounded border">Sessions</a>
+          <a data-nav="capture" href="capture.html" class="px-3 py-2 rounded border">Capture</a>
+          <a data-nav="compare" href="compare.html" class="px-3 py-2 rounded border">Compare</a>
+          <a data-nav="report" href="report.html" class="px-3 py-2 rounded border">Report</a>
+          <a data-nav="settings" href="settings.html" class="px-3 py-2 rounded border">Settings</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-fixed py-8">
+      <div class="grid lg:grid-cols-3 gap-5">
+        <section class="border rounded-xl p-5 bg-white">
+          <h1 class="text-lg font-semibold mb-4">Create Session</h1>
+          <form id="sessionForm" class="space-y-3">
+            <div>
+              <label class="block text-sm mb-1">Session type</label>
+              <select id="sessionType" class="kt-select w-full">
+                <option value="move-in">Move-in</option>
+                <option value="move-out">Move-out</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Property name</label>
+              <input id="propertyName" class="kt-input w-full" placeholder="123 Main St Apt 2B" required>
+            </div>
+            <button class="kt-btn kt-btn-primary w-full" type="submit">Create + Set Active</button>
+          </form>
+        </section>
+
+        <section class="border rounded-xl p-5 bg-white lg:col-span-2">
+          <h2 class="text-lg font-semibold mb-4">Sessions</h2>
+          <div id="sessionList"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/core.bundle.js"></script>
+  <script src="assets/vendors/ktui/ktui.min.js"></script>
+  <script src="assets/js/layouts/demo1.js"></script>
+  <script src="assets/js/mimo.js"></script>
+  <script src="assets/js/mimo-pages.js"></script>
+</body>
+</html>

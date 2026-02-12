@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIMO Dashboard</title>
+  <link href="assets/vendors/keenicons/styles.bundle.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-background" data-page="dashboard">
+  <div class="min-h-screen">
+    <header class="border-b bg-white">
+      <div class="container-fixed py-4 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-xl font-semibold">Move In / Move Out</div>
+        <nav class="flex flex-wrap gap-2 text-sm">
+          <a data-nav="dashboard" href="index.html" class="px-3 py-2 rounded border">Dashboard</a>
+          <a data-nav="sessions" href="sessions.html" class="px-3 py-2 rounded border">Sessions</a>
+          <a data-nav="capture" href="capture.html" class="px-3 py-2 rounded border">Capture</a>
+          <a data-nav="compare" href="compare.html" class="px-3 py-2 rounded border">Compare</a>
+          <a data-nav="report" href="report.html" class="px-3 py-2 rounded border">Report</a>
+          <a data-nav="settings" href="settings.html" class="px-3 py-2 rounded border">Settings</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-fixed py-8">
+      <div class="grid md:grid-cols-4 gap-4 mb-6">
+        <div class="border rounded-xl p-4 bg-white">
+          <div class="text-xs text-muted-foreground">Total Sessions</div>
+          <div id="dashSessionCount" class="text-2xl font-semibold">0</div>
+        </div>
+        <div class="border rounded-xl p-4 bg-white">
+          <div class="text-xs text-muted-foreground">Total Rooms</div>
+          <div id="dashRoomCount" class="text-2xl font-semibold">0</div>
+        </div>
+        <div class="border rounded-xl p-4 bg-white">
+          <div class="text-xs text-muted-foreground">Captured Items</div>
+          <div id="dashItemCount" class="text-2xl font-semibold">0</div>
+        </div>
+        <div class="border rounded-xl p-4 bg-white">
+          <div class="text-xs text-muted-foreground">Active Session</div>
+          <div id="dashActiveSession" class="text-sm font-medium">None selected</div>
+        </div>
+      </div>
+
+      <div class="border rounded-xl p-5 bg-white">
+        <h1 class="text-lg font-semibold mb-2">MVP Flow</h1>
+        <p class="text-sm text-muted-foreground mb-3">Create sessions, capture room media with fallback file picker, compare move-in vs move-out, then export report/JSON.</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="sessions.html" class="kt-btn kt-btn-primary">Create/Select Sessions</a>
+          <a href="capture.html" class="kt-btn kt-btn-outline">Capture Room Items</a>
+          <a href="compare.html" class="kt-btn kt-btn-outline">Compare Sessions</a>
+          <a href="report.html" class="kt-btn kt-btn-outline">Generate Report</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/core.bundle.js"></script>
+  <script src="assets/vendors/ktui/ktui.min.js"></script>
+  <script src="assets/js/layouts/demo1.js"></script>
+  <script src="assets/js/mimo.js"></script>
+  <script src="assets/js/mimo-pages.js"></script>
+</body>
+</html>

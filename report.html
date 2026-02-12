@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIMO Report</title>
+  <link href="assets/vendors/keenicons/styles.bundle.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-background" data-page="report">
+  <div class="min-h-screen">
+    <header class="border-b bg-white">
+      <div class="container-fixed py-4 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-xl font-semibold">Move In / Move Out</div>
+        <nav class="flex flex-wrap gap-2 text-sm">
+          <a data-nav="dashboard" href="index.html" class="px-3 py-2 rounded border">Dashboard</a>
+          <a data-nav="sessions" href="sessions.html" class="px-3 py-2 rounded border">Sessions</a>
+          <a data-nav="capture" href="capture.html" class="px-3 py-2 rounded border">Capture</a>
+          <a data-nav="compare" href="compare.html" class="px-3 py-2 rounded border">Compare</a>
+          <a data-nav="report" href="report.html" class="px-3 py-2 rounded border">Report</a>
+          <a data-nav="settings" href="settings.html" class="px-3 py-2 rounded border">Settings</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-fixed py-8">
+      <section class="border rounded-xl p-5 bg-white mb-4">
+        <h1 class="text-lg font-semibold mb-3">Generate Report</h1>
+        <div class="grid md:grid-cols-4 gap-3">
+          <div>
+            <label class="block text-sm mb-1">Move-in session</label>
+            <select id="reportMoveIn" class="kt-select w-full"></select>
+          </div>
+          <div>
+            <label class="block text-sm mb-1">Move-out session</label>
+            <select id="reportMoveOut" class="kt-select w-full"></select>
+          </div>
+          <div class="flex items-end">
+            <button id="generateReportBtn" class="kt-btn kt-btn-primary w-full" type="button">Generate</button>
+          </div>
+          <div class="flex items-end">
+            <button id="downloadReportBtn" class="kt-btn kt-btn-outline w-full" type="button">Download Report</button>
+          </div>
+        </div>
+        <div class="mt-3">
+          <button id="exportJsonBtn" class="kt-btn kt-btn-outline" type="button">Export JSON</button>
+        </div>
+      </section>
+
+      <section class="border rounded-xl p-5 bg-white">
+        <h2 class="font-semibold mb-3">Report Preview</h2>
+        <div id="reportPreview" class="text-sm text-muted-foreground">Select sessions and click Generate report.</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/core.bundle.js"></script>
+  <script src="assets/vendors/ktui/ktui.min.js"></script>
+  <script src="assets/js/layouts/demo1.js"></script>
+  <script src="assets/js/mimo.js"></script>
+  <script src="assets/js/mimo-pages.js"></script>
+</body>
+</html>

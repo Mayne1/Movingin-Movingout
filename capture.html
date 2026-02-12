@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIMO Capture</title>
+  <link href="assets/vendors/keenicons/styles.bundle.css" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-background" data-page="capture">
+  <div class="min-h-screen">
+    <header class="border-b bg-white">
+      <div class="container-fixed py-4 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-xl font-semibold">Move In / Move Out</div>
+        <nav class="flex flex-wrap gap-2 text-sm">
+          <a data-nav="dashboard" href="index.html" class="px-3 py-2 rounded border">Dashboard</a>
+          <a data-nav="sessions" href="sessions.html" class="px-3 py-2 rounded border">Sessions</a>
+          <a data-nav="capture" href="capture.html" class="px-3 py-2 rounded border">Capture</a>
+          <a data-nav="compare" href="compare.html" class="px-3 py-2 rounded border">Compare</a>
+          <a data-nav="report" href="report.html" class="px-3 py-2 rounded border">Report</a>
+          <a data-nav="settings" href="settings.html" class="px-3 py-2 rounded border">Settings</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-fixed py-8">
+      <div class="border rounded-xl p-4 bg-white mb-4">
+        <h1 class="text-lg font-semibold mb-2">Active Session</h1>
+        <div id="captureSessionSummary" class="text-sm text-muted-foreground">Loading...</div>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-5">
+        <section class="border rounded-xl p-5 bg-white">
+          <h2 class="font-semibold mb-3">Room Checklist + Capture</h2>
+          <div class="space-y-3">
+            <div class="flex gap-2">
+              <input id="roomName" class="kt-input w-full" placeholder="Add room (Kitchen)">
+              <button id="addRoomBtn" class="kt-btn kt-btn-outline" type="button">Add</button>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Select room</label>
+              <select id="roomSelect" class="kt-select w-full"></select>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Optional note</label>
+              <textarea id="captureNote" class="kt-textarea w-full" rows="2" placeholder="Scratch near sink, chip on tile..."></textarea>
+            </div>
+            <div>
+              <label class="block text-sm mb-1">Capture media (fallback file picker always available)</label>
+              <input id="captureFile" class="block w-full text-sm" type="file" accept="image/*,video/*" capture multiple>
+            </div>
+            <button id="tryCameraBtn" class="kt-btn kt-btn-outline w-full" type="button">Try Camera Permission</button>
+            <div id="cameraStatus" class="text-xs text-muted-foreground">Camera not requested yet.</div>
+            <div id="storageMessage" class="text-xs text-muted-foreground">
+              Photos: small compressed thumbnail + metadata in localStorage. Videos: metadata only, not full file.
+            </div>
+          </div>
+        </section>
+
+        <section class="border rounded-xl p-5 bg-white lg:col-span-2">
+          <h2 class="font-semibold mb-3">Captured Items For Selected Room</h2>
+          <div id="roomItems"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/core.bundle.js"></script>
+  <script src="assets/vendors/ktui/ktui.min.js"></script>
+  <script src="assets/js/layouts/demo1.js"></script>
+  <script src="assets/js/mimo.js"></script>
+  <script src="assets/js/mimo-pages.js"></script>
+</body>
+</html>
